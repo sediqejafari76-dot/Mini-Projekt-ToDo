@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Projekt – ToDo Liste</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        input {
+            padding: 8px;
+        }
+        button {
+            padding: 8px;
+        }
+        li {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+  <h2>Mini Projekt – Bewerbung Fachinformatikerin</h2>
+
+    <input type="text" id="taskInput" placeholder="Neue Aufgabe">
+    <button onclick="addTask()">Hinzufügen</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        function addTask() {
+            const input = document.getElementById("taskInput");
+            const task = input.value;
+
+            if (task === "") {
+                alert("Bitte eine Aufgabe eingeben");
+                return;
+            }
+
+            const li = document.createElement("li");
+            li.textContent = task;
+
+            document.getElementById("taskList").appendChild(li);
+            input.value = "";
+        }
+    </script>
+
+</body>
+</html>
